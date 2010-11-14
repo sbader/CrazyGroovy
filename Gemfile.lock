@@ -1,0 +1,21 @@
+GEM
+  specs:
+    haml (3.0.23)
+    proxies (0.2.1)
+    rack (1.2.1)
+    rtaglib (0.3.0)
+    s3 (0.3.7)
+      proxies
+    sinatra (1.1.0)
+      rack (~> 1.1)
+      tilt (~> 1.1)
+    tilt (1.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  haml
+  rtaglib
+  s3
+  sinatra
