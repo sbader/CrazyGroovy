@@ -1,6 +1,6 @@
 source :rubygems
 gem "sinatra"
 gem "rake"
-gem "rtaglib"
+gem "id3lib"
 gem "s3"
 gem "haml"
