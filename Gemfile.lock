@@ -5,7 +5,7 @@ GEM
     proxies (0.2.1)
     rack (1.2.1)
     rake (0.8.7)
-    rtaglib (0.3.0)
+    ruby-mp3info (0.6.13)
     s3 (0.3.7)
       proxies
     sinatra (1.1.0)
@@ -19,6 +19,6 @@ PLATFORMS
 DEPENDENCIES
   haml
   rake
-  rtaglib
+  ruby-mp3info
   s3
   sinatra
