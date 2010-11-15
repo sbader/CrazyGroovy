@@ -1,13 +1,7 @@
-namespace :db do
-  task :environment do
-    require 'active_record'
-    ActiveRecord::Base.establish_connection :adapter => 'sqlite3', :dbfile =>  'db/test.sqlite3.db'
-  end
+# Add your own tasks in files placed in lib/tasks ending in .rake,
+# for example lib/tasks/capistrano.rake, and they will automatically be available to Rake.
 
-  desc "Migrate the database"
-  task(:migrate => :environment) do
-    ActiveRecord::Base.logger = Logger.new(STDOUT)
-    ActiveRecord::Migration.verbose = true
-    ActiveRecord::Migrator.migrate("db/migrate")
-  end
-end
+require File.expand_path('../config/application', __FILE__)
+require 'rake'
+
+Audio::Application.load_tasks

@@ -1,0 +1,10 @@
+%h1= t '.title'
+%p
+  = link_to t('back'), songs_path
+  = link_to t('edit'), edit_song_path(@song)
+
+%dl
+  %dt= Song.human_attribute_name :title
+  %dd= @song.title
+  %dt= Song.human_attribute_name :track
+  %dd= @song.track

@@ -1,0 +1,10 @@
+%h1= t '.title'
+%p
+  = link_to t('back'), albums_path
+  = link_to t('edit'), edit_album_path(@album)
+
+%dl
+  %dt= Album.human_attribute_name :title
+  %dd= @album.title
+  %dt= Album.human_attribute_name :artist
+  %dd= @album.artist
