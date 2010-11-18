@@ -1,14 +1,16 @@
-%h1= t('.title')
-%p= link_to t('.new_album'), new_album_path
-
-%table
+#audio
+  %audio#player
+#musicbar
+  %a#previous_song{:href => '#prev'} &#9664;&#9664;
+  %a#play_button{:href => '#play'} &#9654;
+  %a#next_song{:href => '#next'} &#9654;&#9654;
+%table#songs
   %thead
     %tr
       %th #
       %th Title
       %th Album
       %th Artist
-  
   %tbody
     - for album in @albums
       -for song in album.songs
@@ -17,5 +19,6 @@
           %td= song.title
           %td= song.album.title
           %td= song.album.artist
-          %td= link_to("Play",song.s3_key)
+          %td
+            %a.play_button{:href => "#play_#{dom_id(song)}"} &#9654;
         
