@@ -4,15 +4,18 @@
 %table
   %thead
     %tr
-      %th= Album.human_attribute_name :title
-      %th= Album.human_attribute_name :artist
-      %th{:colspan => 3}= t 'actions'
+      %th #
+      %th Title
+      %th Album
+      %th Artist
   
   %tbody
     - for album in @albums
-      %tr{ :class => cycle(:odd, :even) }
-        %td= album.title
-        %td= album.artist
-        %td.action= link_to t('show'), album
-        %td.action= link_to t('edit'), edit_album_path(album)
-        %td.action= link_to t('destroy'), album, :confirm => t('are_you_sure'), :method => :delete
+      -for song in album.songs
+        %tr{:id => dom_id(song),:data => {:s3_key => song.s3_key}}
+          %td= song.track
+          %td= song.title
+          %td= song.album.title
+          %td= song.album.artist
+          %td= link_to("Play",song.s3_key)
+        

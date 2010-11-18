@@ -3,3 +3,22 @@
 
 en:
   hello: "Hello world"
+  actions: "Actions"
+  back: "Back"
+  edit: "Edit"
+  show: "Show"
+  destroy: "Delete"
+  are_you_sure: "Sure you want to delete that?"
+  albums:
+    index:
+      title: "Albums"
+      new_album: "New Album"
+      show: "Show"
+      edit: "Edit"
+      destroy: "Destroy"
+    new:
+      title: "Add Album"
+    show:
+      title: "Album"
+    edit:
+      title: "Edit Album"
