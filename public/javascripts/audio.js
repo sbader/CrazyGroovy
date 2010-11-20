@@ -14,17 +14,23 @@ $(document).ready(function(){
   $("#play_button").click(function(){
     play_pause_toggle();
   });
-  $(".play_button").click(function(){
-    play_song($(this).parents("tr").data("s3_key"));
-    current_song = $(this).parents("tr");
-    $("#play_button").html("||");
+  $("tr").click(function(){
+    $("tr").removeClass("selected");
+    $(this).addClass("selected");
+    return false;
+  });
+  $("tr").dblclick(function(){
+    play_song($(this).data("s3_key"));
+    current_song = $(this);
+    $("#play_button").addClass("pause")
+    return false;
   });
   $(audio).bind('play',function(){
-    $("#play_button").html("||");
+    $("#play_button").addClass("pause")
     $("#play_button").attr("href","#pause");
   });
   $(audio).bind('pause',function(){
-    $("#play_button").html("&#9654;");
+    $("#play_button").removeClass("pause")
     $("#play_button").attr("href","#play");
   });
   $(audio).bind('ended',function(){
