@@ -1,8 +1,54 @@
 $(document).ready(function(){
-  var audio = $("#audio audio").get(0);
-  var current_song = $("table#songs > tbody").children("tr").first();
-  src = current_song.data("s3_key");
-  audio.setAttribute('src',src);
+  // positionIndicator = $('.player #handle');
+  timeleft = $('#timeleft');
+  duration = $('#duration');
+  var supportsAudio = !!document.createElement('audio').canPlayType,
+  			audio,
+  			loadingIndicator,
+  			positionIndicator,
+  			timeleft,
+  			loaded = false,
+  			manualSeek = false;
+  if(supportsAudio){
+    var audio = $("#audio audio").get(0);
+    var current_song = $("table#songs > tbody").children("tr").first();
+    src = current_song.data("s3_key");
+    audio.setAttribute('src',src);
+    change_label();
+    var positionIndicator = $('#player #handle');
+    if ((audio.buffered != undefined) && (audio.buffered.length != 0)) {
+			$(audio).bind('progress', function() {
+				var loaded = parseInt(((audio.buffered.end(0) / audio.duration) * 100), 10);
+			});
+		}
+		$(audio).bind('timeupdate',function(){
+      var rem = parseInt(audio.duration - audio.currentTime, 10),
+              pos = (audio.currentTime / audio.duration) * 100,
+              mins = Math.floor(rem/60,10),
+              secs = rem - mins*60;
+      timeleft.text('-' + mins + ':' + (secs < 10 ? '0' + secs : secs));
+      // if (!manualSeek) { positionIndicator.css({left: pos + '%'}); }
+			$('#player #gutter').slider({
+					value: audio.currentTime,
+					step: 0.01,
+					orientation: "horizontal",
+					range: "min",
+					max: audio.duration,
+					animate: true,					
+					slide: function(e,ui){							
+            // manualSeek = true;
+						audio.currentTime = ui.value;
+					},
+					stop:function(e,ui){
+            // manualSeek = false;          
+						audio.currentTime = ui.value;
+					}
+				});
+    });
+  }
+  // else {
+  //   loadingIndicator.remove();
+  // }
   $("#previous_song").click(function(){
     song = current_song.prev().data("s3_key");
     play_song(song);
@@ -20,8 +66,8 @@ $(document).ready(function(){
     return false;
   });
   $("tr").dblclick(function(){
-    play_song($(this).data("s3_key"));
     current_song = $(this);
+    play_song($(this).data("s3_key"));
     $("#play_button").addClass("pause")
     return false;
   });
@@ -49,16 +95,22 @@ $(document).ready(function(){
     audio.setAttribute('src',src);
     audio.load();
     audio.play();
+    change_label();
   }
   function next_song(){
     song = current_song.next().data("s3_key");
-    play_song(song);
     current_song = current_song.next();
+    play_song(song);
   }
   function previous_song(){
     song = current_song.prev().data("s3_key");
-    play_song(song);
     current_song = current_song.prev();
+    play_song(song);
+  }
+  function change_label(){
+    $("#song_title").html(current_song.children("td.song_title").text());
+    $("#artist").html(current_song.children("td.artist").text());
+    $("#album").html(current_song.children("td.album").text());
   }
 });
 

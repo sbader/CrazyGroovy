@@ -62,63 +62,129 @@ a img {
   border: none;
 }
 
-/* line 7, ../../../app/stylesheets/screen.sass */
-#musicbar {
-  margin: 10px;
+/* line 6, ../../../app/stylesheets/screen.sass */
+body {
+  padding: 0;
+  height: 100%;
 }
+
 /* line 9, ../../../app/stylesheets/screen.sass */
-#musicbar a {
+#musicbar {
+  position: relative;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  width: 100%;
+  height: 140px;
+}
+/* line 16, ../../../app/stylesheets/screen.sass */
+#musicbar #player {
+  margin: 20px auto 20px auto;
+  width: 400px;
+  vertical-align: top;
+}
+/* line 20, ../../../app/stylesheets/screen.sass */
+#musicbar #player #info {
+  width: 400px;
+  display: inline-block;
+  font-size: 14px;
+  vertical-align: top;
+  text-align: center;
+}
+/* line 26, ../../../app/stylesheets/screen.sass */
+#musicbar #player #info #song_title {
+  font-size: 22px;
+}
+/* line 28, ../../../app/stylesheets/screen.sass */
+#musicbar #player #progress {
+  margin-top: 8px;
+}
+/* line 30, ../../../app/stylesheets/screen.sass */
+#musicbar #player #progress #gutter {
+  display: inline-block;
+  width: 400px;
+  height: 10px;
+}
+/* line 34, ../../../app/stylesheets/screen.sass */
+#musicbar #player #progress #timeleft {
+  position: absolute;
+  right: 6px;
+  font-size: 9px;
+  vertical-align: top;
+}
+/* line 39, ../../../app/stylesheets/screen.sass */
+#musicbar #player #buttons {
+  width: 104px;
+  margin: 4px auto 0 auto;
+}
+/* line 42, ../../../app/stylesheets/screen.sass */
+#musicbar #player #buttons a {
   display: inline-block;
   width: 32px;
   height: 32px;
 }
-/* line 13, ../../../app/stylesheets/screen.sass */
-#musicbar a#previous_song {
-  background: url('/images/buttons.png?1290211109');
+/* line 46, ../../../app/stylesheets/screen.sass */
+#musicbar #player #buttons a#previous_song {
+  background: url('/images/buttons.png?1290308933');
 }
-/* line 15, ../../../app/stylesheets/screen.sass */
-#musicbar a#play_button {
-  background: url('/images/buttons.png?1290211109') 0 -32px;
+/* line 48, ../../../app/stylesheets/screen.sass */
+#musicbar #player #buttons a#play_button {
+  background: url('/images/buttons.png?1290308933') 0 -32px;
 }
-/* line 17, ../../../app/stylesheets/screen.sass */
-#musicbar a#play_button.pause {
-  background: url('/images/buttons.png?1290211109') 0 -64px;
+/* line 50, ../../../app/stylesheets/screen.sass */
+#musicbar #player #buttons a#play_button.pause {
+  background: url('/images/buttons.png?1290308933') 0 -64px;
 }
-/* line 19, ../../../app/stylesheets/screen.sass */
-#musicbar a#next_song {
-  background: url('/images/buttons.png?1290211109') 0 -96px;
+/* line 52, ../../../app/stylesheets/screen.sass */
+#musicbar #player #buttons a#next_song {
+  background: url('/images/buttons.png?1290308933') 0 -96px;
 }
 
-/* line 21, ../../../app/stylesheets/screen.sass */
-table {
-  margin: 10px 0 10px 10px;
+/* line 54, ../../../app/stylesheets/screen.sass */
+#song_container {
+  position: absolute;
+  top: 140px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  overflow-y: auto;
 }
-/* line 25, ../../../app/stylesheets/screen.sass */
-table thead tr th {
+/* line 61, ../../../app/stylesheets/screen.sass */
+#song_container table {
+  width: 100%;
+  margin: 10px 0 1px 0;
+}
+/* line 66, ../../../app/stylesheets/screen.sass */
+#song_container table thead tr th {
   padding: 2px 4px 2px 4px;
 }
-/* line 27, ../../../app/stylesheets/screen.sass */
-table tr {
+/* line 68, ../../../app/stylesheets/screen.sass */
+#song_container table tr {
   -webkit-user-select: none;
   cursor: default;
 }
-/* line 30, ../../../app/stylesheets/screen.sass */
-table tr.odd {
+/* line 71, ../../../app/stylesheets/screen.sass */
+#song_container table tr.odd {
   background-color: #e8e8e8;
 }
-/* line 32, ../../../app/stylesheets/screen.sass */
-table tr.odd.selected {
+/* line 73, ../../../app/stylesheets/screen.sass */
+#song_container table tr.odd.selected {
   background-color: #bed6ec;
 }
-/* line 34, ../../../app/stylesheets/screen.sass */
-table tr.even {
+/* line 75, ../../../app/stylesheets/screen.sass */
+#song_container table tr.even {
   background-color: white;
 }
-/* line 36, ../../../app/stylesheets/screen.sass */
-table tr.even.selected {
+/* line 77, ../../../app/stylesheets/screen.sass */
+#song_container table tr.even.selected {
   background-color: #bed6ec;
 }
-/* line 38, ../../../app/stylesheets/screen.sass */
-table tr td {
+/* line 79, ../../../app/stylesheets/screen.sass */
+#song_container table tr td {
   padding: 2px 4px 2px 4px;
+}
+/* line 81, ../../../app/stylesheets/screen.sass */
+#song_container table tr td.track {
+  text-align: right;
+  width: 10px;
 }
