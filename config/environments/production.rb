@@ -47,4 +47,5 @@ Audio::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
   Sass::Plugin.options[:never_update] = true
+  config.serve_static_assets = true
 end
