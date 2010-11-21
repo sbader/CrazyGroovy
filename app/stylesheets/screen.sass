@@ -3,6 +3,9 @@
  mport this file using the following HTML or equivalent:
  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />*/
 @import "compass/reset"
+@import "compass/css3"
+$coolblue: #007ABC
+
 body
   padding: 0
   height: 100%
@@ -36,48 +39,92 @@ body
         right: 6px
         font-size: 9px
         vertical-align: top
+        z-index: 1000000
+        &.white
+          color: #FFFFFF
     #buttons
-      width: 104px
-      margin: 4px auto 0 auto
+      width: 130px
+      margin: 8px auto 0 auto
       a
         display: inline-block
-        width: 32px
-        height: 32px
-        &#previous_song
-          background: sprite-image("buttons/back.png")
         &#play_button
-          background: sprite-image("buttons/play.png")
-          &.pause
-            background: sprite-image("buttons/pause.png")
-        &#next_song
-          background: sprite-image("buttons/forward.png")
+          vertical-align: middle
+          width: 46px
+          height: 45px
+          background: sprite-image("buttons/play_normal.png")
+          &:hover
+            background: sprite-image("buttons/play_focused.png")
+            &:active
+              background: sprite-image("buttons/play_highlighted.png")
+          &.paused
+            background: sprite-image("buttons/pause_normal.png")
+            &:hover
+              background: sprite-image("buttons/pause_focused.png")
+              &:active
+                background: sprite-image("buttons/pause_highlighted.png")
+        &.skip
+          width: 38px
+          height: 37px
+          vertical-align: middle
+          &#next_song
+            background: sprite-image("buttons/next_normal.png")
+            &:hover
+              background: sprite-image("buttons/next_focused.png")
+              &:active
+                background: sprite-image("buttons/next_highlighted.png")
+          &#previous_song
+            background: sprite-image("buttons/previous_normal.png")
+            &:hover
+              background: sprite-image("buttons/previous_focused.png")
+              &:active
+                background: sprite-image("buttons/previous_highlighted.png")
 #song_container
-  position: absolute
-  top: 140px
-  left: 0px
-  right: 0px
-  bottom: 0px
-  overflow-y: auto
-  table
-    width: 100%
-    margin: 10px 0 1px 0
-    thead
-      tr
-        th
-          padding: 2px 4px 2px 4px
-    tr
+  #songs_head
+    width: 99%
+    height: 14px
+    position: absolute
+    top: 160px
+    left: 0px
+    right: 0px
+    bottom: 0px
+  #songs_head
+    -webkit-user-select: none
+  .field
+    overflow: hidden
+    &.track
+      display: inline-block
+      width: 2%
+    &.song_title
+      display: inline-block
+      width: 40%
+    &.artist
+      display: inline-block
+      width: 29%
+    &.album
+      display: inline-block
+      width: 28%
+  #songs_body
+    position: absolute
+    top: 180px
+    left: 0px
+    right: 0px
+    bottom: 0px
+    overflow-y: auto
+    .song
+      padding: 4px 6px 4px 6px
       -webkit-user-select: none
+      -moz-user-select: none
       cursor: default
+      width: 99.1%
       &.odd
-        background-color: #E8E8E8
+        background-color: #F4F4F4
         &.selected
-          background-color: #BED6EC
+          background-color: $coolblue
+          +opacity(.7)
+          color: #FFFFFF
       &.even
         background-color: #FFFFFF
         &.selected
-          background-color: #BED6EC
-      td
-        padding: 2px 4px 2px 4px
-        &.track
-          text-align: right
-          width: 10px
+          background-color: $coolblue
+          color: #FFFFFF
+          +opacity(.7)

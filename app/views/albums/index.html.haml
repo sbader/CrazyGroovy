@@ -12,22 +12,20 @@
         #handle
         #timeleft
     #buttons
-      %a#previous_song{:href => '#prev'}
+      %a#previous_song.skip{:href => '#prev'}
       %a#play_button{:href => '#play'}
-      %a#next_song{:href => '#next'}
+      %a#next_song.skip{:href => '#next'}
 #song_container
-  %table#songs
-    %thead
-      %tr
-        %th
-        %th Title
-        %th Album
-        %th Artist
-    %tbody
-      - for album in @albums
-        -for song in album.songs.sort!{|t1,t2|t1.track <=> t2.track}
-          %tr{:id => dom_id(song),:data => {:s3_key => song.s3_key}, :class => cycle(:odd, :even)}
-            %td.track= song.track
-            %td.song_title= song.title
-            %td.album= album.title
-            %td.artist= album.artist
+  #songs_head
+    .track{:class => 'field'}
+    .song_title{:class => 'field'} Title
+    .album{:class => 'field'} Album
+    .artist{:class => 'field'} Artist
+  #songs_body
+    - for album in @albums
+      -for song in album.songs.sort!{|t1,t2|t1.track <=> t2.track}
+        .song{:id => dom_id(song),:data => {:s3_key => song.s3_key}, :class => cycle(:odd, :even)}
+          .track{:class => 'field'}= song.track
+          .song_title{:class => 'field'}= song.title
+          .album{:class => 'field'}= album.title
+          .artist{:class => 'field'}= album.artist
