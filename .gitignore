@@ -5,3 +5,4 @@ tmp/**/*
 *.DS_Store
 .sass-cache
 tmp/tempfile.mp3
+art*
