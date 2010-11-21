@@ -53,9 +53,7 @@ $(document).ready(function(){
   //   loadingIndicator.remove();
   // }
   $("#previous_song").click(function(){
-    song = current_song.prev().data("s3_key");
-    play_song(song);
-    current_song = current_song.prev();
+    previous_song();
   });
   $("#next_song").click(function(){
     next_song();
@@ -104,13 +102,17 @@ $(document).ready(function(){
   }
   function next_song(){
     song = current_song.next().data("s3_key");
-    current_song = current_song.next();
-    play_song(song);
+    if(song){
+      current_song = current_song.next();
+      play_song(song);
+    }
   }
   function previous_song(){
     song = current_song.prev().data("s3_key");
-    current_song = current_song.prev();
-    play_song(song);
+    if(song){
+      current_song = current_song.prev();
+      play_song(song);
+    }
   }
   function change_label(){
     $("#song_title").html(current_song.children(".song_title").text());

@@ -21,12 +21,16 @@ body
     width: 400px
     vertical-align: top
     #info
+      font-family: "sorts-mill-goudy-1","sorts-mill-goudy-2",serif
       width: 400px
+      height: 54px
       display: inline-block
       font-size: 14px
       vertical-align: top
       text-align: center
+      line-height: 15px
       #song_title
+        line-height: 24px
         font-size: 22px
     #progress
       margin-top: 8px
@@ -81,15 +85,18 @@ body
               &:active
                 background: sprite-image("buttons/previous_highlighted.png")
 #song_container
+  font-family: "ff-meta-web-pro-1","ff-meta-web-pro-2",sans-serif
+  font-size: 14px
+  line-height: 18px
   #songs_head
-    width: 99%
+    padding: 3px 6px 3px 6px
+    width: 98%
     height: 14px
     position: absolute
     top: 160px
     left: 0px
     right: 0px
     bottom: 0px
-  #songs_head
     -webkit-user-select: none
   .field
     overflow: hidden
@@ -113,7 +120,7 @@ body
     bottom: 0px
     overflow-y: auto
     .song
-      padding: 4px 6px 4px 6px
+      padding: 3px 6px 3px 6px
       -webkit-user-select: none
       -moz-user-select: none
       cursor: default
