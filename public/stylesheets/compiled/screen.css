@@ -137,27 +137,27 @@ body {
   vertical-align: middle;
   width: 46px;
   height: 45px;
-  background: url('/images/buttons.png?1290380695');
+  background: url('/images/buttons.png?1290383865');
 }
 /* line 61, ../../../app/stylesheets/screen.sass */
 #musicbar #player #buttons a#play_button:hover {
-  background: url('/images/buttons.png?1290380695') 0 -45px;
+  background: url('/images/buttons.png?1290383865') 0 -45px;
 }
 /* line 63, ../../../app/stylesheets/screen.sass */
 #musicbar #player #buttons a#play_button:hover:active {
-  background: url('/images/buttons.png?1290380695') 0 -90px;
+  background: url('/images/buttons.png?1290383865') 0 -90px;
 }
 /* line 65, ../../../app/stylesheets/screen.sass */
 #musicbar #player #buttons a#play_button.paused {
-  background: url('/images/buttons.png?1290380695') 0 -135px;
+  background: url('/images/buttons.png?1290383865') 0 -135px;
 }
 /* line 67, ../../../app/stylesheets/screen.sass */
 #musicbar #player #buttons a#play_button.paused:hover {
-  background: url('/images/buttons.png?1290380695') 0 -180px;
+  background: url('/images/buttons.png?1290383865') 0 -180px;
 }
 /* line 69, ../../../app/stylesheets/screen.sass */
 #musicbar #player #buttons a#play_button.paused:hover:active {
-  background: url('/images/buttons.png?1290380695') 0 -225px;
+  background: url('/images/buttons.png?1290383865') 0 -225px;
 }
 /* line 71, ../../../app/stylesheets/screen.sass */
 #musicbar #player #buttons a.skip {
@@ -167,27 +167,27 @@ body {
 }
 /* line 75, ../../../app/stylesheets/screen.sass */
 #musicbar #player #buttons a.skip#next_song {
-  background: url('/images/buttons.png?1290380695') 0 -270px;
+  background: url('/images/buttons.png?1290383865') 0 -270px;
 }
 /* line 77, ../../../app/stylesheets/screen.sass */
 #musicbar #player #buttons a.skip#next_song:hover {
-  background: url('/images/buttons.png?1290380695') 0 -307px;
+  background: url('/images/buttons.png?1290383865') 0 -307px;
 }
 /* line 79, ../../../app/stylesheets/screen.sass */
 #musicbar #player #buttons a.skip#next_song:hover:active {
-  background: url('/images/buttons.png?1290380695') 0 -344px;
+  background: url('/images/buttons.png?1290383865') 0 -344px;
 }
 /* line 81, ../../../app/stylesheets/screen.sass */
 #musicbar #player #buttons a.skip#previous_song {
-  background: url('/images/buttons.png?1290380695') 0 -381px;
+  background: url('/images/buttons.png?1290383865') 0 -381px;
 }
 /* line 83, ../../../app/stylesheets/screen.sass */
 #musicbar #player #buttons a.skip#previous_song:hover {
-  background: url('/images/buttons.png?1290380695') 0 -418px;
+  background: url('/images/buttons.png?1290383865') 0 -418px;
 }
 /* line 85, ../../../app/stylesheets/screen.sass */
 #musicbar #player #buttons a.skip#previous_song:hover:active {
-  background: url('/images/buttons.png?1290380695') 0 -455px;
+  background: url('/images/buttons.png?1290383865') 0 -455px;
 }
 
 /* line 87, ../../../app/stylesheets/screen.sass */

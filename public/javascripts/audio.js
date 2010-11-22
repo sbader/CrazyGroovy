@@ -12,10 +12,24 @@ $(document).ready(function(){
   if(supportsAudio){
     var audio = $("#audio audio").get(0);
     var current_song = $("#songs_body").children(".song").first();
-    src = current_song.data("s3_key");
-    audio.setAttribute('src',src);
     change_label();
     var positionIndicator = $('#player #handle');
+    $('#player #gutter').slider({
+       value: audio.currentTime,
+       step: 0.01,
+       orientation: "horizontal",
+       range: "min",
+       max: audio.duration,
+       animate: true,          
+       slide: function(e,ui){              
+          // manualSeek = true;
+         audio.currentTime = ui.value;
+       },
+       stop:function(e,ui){
+          // manualSeek = false;          
+         audio.currentTime = ui.value;
+       }
+     });
     if ((audio.buffered != undefined) && (audio.buffered.length != 0)) {
      $(audio).bind('progress', function() {
        var loaded = parseInt(((audio.buffered.end(0) / audio.duration) * 100), 10);
@@ -72,7 +86,7 @@ $(document).ready(function(){
     $("#play_button").addClass("paused")
     return false;
   });
-  $(audio).bind('play',function(){
+  $(audio).bind('play',function(){ 
     $("#play_button").addClass("paused")
     $("#play_button").attr("href","#pause");
   });
@@ -86,7 +100,14 @@ $(document).ready(function(){
   });
   function play_pause_toggle(){
     if(audio.paused){
-      audio.play();
+      if((audio.buffered != undefined) && (audio.buffered.length != 0)){
+        audio.play();
+      }
+      else{
+        src = current_song.data("s3_key");
+        play_song(src);
+        alert("huh");
+      }
     }
     else{
       audio.pause();
@@ -102,10 +123,9 @@ $(document).ready(function(){
   }
   function next_song(){
     song = current_song.next().data("s3_key");
-    if(song){
-      current_song = current_song.next();
-      play_song(song);
-    }
+    current_song = current_song.next();
+    play_song(song);
+    alert(current_song.html());
   }
   function previous_song(){
     song = current_song.prev().data("s3_key");
