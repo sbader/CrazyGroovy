@@ -5,17 +5,32 @@
 @import "compass/reset"
 @import "compass/css3"
 $coolblue: #007ABC
-
+$grey: #ddd
+$darkergrey: #ccc
+$bodygrey: rgb(240, 240, 240)
+$startgrey: rgb(230, 230, 230)
+$endgrey: rgb(190, 190, 190)
+$stopgrey: rgb(220, 220, 220)
+$evenlightergrey: #eee
+$lightestgrey: #eee
+$albumheadgrey: #eeeeff
+$linegrey: #ddd
+html
+  padding: 0
+  margin: 0
 body
   padding: 0
-  height: 100%
+  //background: url("/images/back.png") repeat
 #musicbar
-  position: relative
+  position: absolute
   top: 0px
   left: 0px
   right: 0px
   width: 100%
-  height: 140px
+  height: 150px
+  +linear-gradient(color-stops($startgrey,$stopgrey 10%, $endgrey))
+  //border-bottom: 1px solid $stopgrey
+  z-index: 10
   #player
     margin: 20px auto 20px auto
     width: 400px
@@ -23,32 +38,33 @@ body
     #info
       font-family: "sorts-mill-goudy-1","sorts-mill-goudy-2",serif
       width: 400px
-      height: 54px
       display: inline-block
       font-size: 14px
+      height: 78px
       vertical-align: top
       text-align: center
       line-height: 15px
       #song_title
         line-height: 24px
         font-size: 22px
-    #progress
-      margin-top: 8px
-      #gutter
-        display: inline-block
-        width: 400px
-        height: 10px
-      #timeleft
-        position: absolute
-        right: 6px
-        font-size: 9px
-        vertical-align: top
-        z-index: 1000000
-        &.white
-          color: #FFFFFF
+      #progress
+        margin-top: 8px
+        #gutter
+          display: inline-block
+          width: 400px
+          height: 10px
+        #timeleft
+          position: absolute
+          right: 6px
+          font-size: 9px
+          line-height: 10px
+          vertical-align: top
+          z-index: 1000000
+          &.white
+            color: #FFFFFF
     #buttons
       width: 130px
-      margin: 8px auto 0 auto
+      margin: 0 auto 0 auto
       -webkit-user-select: none
       -moz-user-select: none
       a
@@ -56,7 +72,7 @@ body
         &#play_button
           vertical-align: middle
           width: 46px
-          height: 45px
+          height: 37px
           background: sprite-image("buttons/play_normal.png")
           &:hover
             background: sprite-image("buttons/play_focused.png")
@@ -88,50 +104,57 @@ body
   font-family: "ff-meta-web-pro-1","ff-meta-web-pro-2",sans-serif
   font-size: 14px
   line-height: 18px
+  position: absolute
+  +linear-gradient(color-stops($endgrey,$stopgrey 10%, $startgrey))
+  top: 150px
+  left: 0px
+  right: 0px
+  bottom: 0px
   #songs_head
-    padding: 3px 6px 3px 6px
-    width: 98%
-    height: 14px
+    background-color: #F4F4F4
+    padding: 3px 6px 5px 6px
+    height: 16px
     position: absolute
-    top: 160px
-    left: 0px
-    right: 0px
+    top: 4px
+    left: 20px
+    right: 20px
     bottom: 0px
+    overflow: hidden
     -webkit-user-select: none
   .field
     overflow: hidden
     &.track
       display: inline-block
-      width: 2%
+      width: 20px
     &.song_title
       display: inline-block
-      width: 40%
+      width: 400px
     &.artist
       display: inline-block
-      width: 29%
     &.album
       display: inline-block
-      width: 28%
+      width: 250px
   #songs_body
     position: absolute
-    top: 180px
-    left: 0px
-    right: 0px
-    bottom: 0px
+    top: 26px
+    left: 20px
+    right: 20px
+    bottom: 40px
     overflow-y: auto
+    overflow-x: hidden
     .song
+      min-width: 940px
       padding: 3px 6px 3px 6px
       -webkit-user-select: none
       -moz-user-select: none
       cursor: default
-      width: 99.1%
-      &.odd
+      &.even
         background-color: #F4F4F4
         &.selected
           background-color: $coolblue
           +opacity(.7)
           color: #FFFFFF
-      &.even
+      &.odd
         background-color: #FFFFFF
         &.selected
           background-color: $coolblue

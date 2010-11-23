@@ -106,7 +106,6 @@ $(document).ready(function(){
       else{
         src = current_song.data("s3_key");
         play_song(src);
-        alert("huh");
       }
     }
     else{
@@ -125,7 +124,6 @@ $(document).ready(function(){
     song = current_song.next().data("s3_key");
     current_song = current_song.next();
     play_song(song);
-    alert(current_song.html());
   }
   function previous_song(){
     song = current_song.prev().data("s3_key");
