@@ -147,27 +147,27 @@ body {
   vertical-align: middle;
   width: 46px;
   height: 37px;
-  background: url('/images/buttons.png?1290417892');
+  background: url('/images/buttons.png?1290485261');
 }
 /* line 77, ../../../app/stylesheets/screen.sass */
 #musicbar #player #buttons a#play_button:hover {
-  background: url('/images/buttons.png?1290417892') 0 -37px;
+  background: url('/images/buttons.png?1290485261') 0 -37px;
 }
 /* line 79, ../../../app/stylesheets/screen.sass */
 #musicbar #player #buttons a#play_button:hover:active {
-  background: url('/images/buttons.png?1290417892') 0 -74px;
+  background: url('/images/buttons.png?1290485261') 0 -74px;
 }
 /* line 81, ../../../app/stylesheets/screen.sass */
 #musicbar #player #buttons a#play_button.paused {
-  background: url('/images/buttons.png?1290417892') 0 -111px;
+  background: url('/images/buttons.png?1290485261') 0 -111px;
 }
 /* line 83, ../../../app/stylesheets/screen.sass */
 #musicbar #player #buttons a#play_button.paused:hover {
-  background: url('/images/buttons.png?1290417892') 0 -148px;
+  background: url('/images/buttons.png?1290485261') 0 -148px;
 }
 /* line 85, ../../../app/stylesheets/screen.sass */
 #musicbar #player #buttons a#play_button.paused:hover:active {
-  background: url('/images/buttons.png?1290417892') 0 -185px;
+  background: url('/images/buttons.png?1290485261') 0 -185px;
 }
 /* line 87, ../../../app/stylesheets/screen.sass */
 #musicbar #player #buttons a.skip {
@@ -177,33 +177,33 @@ body {
 }
 /* line 91, ../../../app/stylesheets/screen.sass */
 #musicbar #player #buttons a.skip#next_song {
-  background: url('/images/buttons.png?1290417892') 0 -222px;
+  background: url('/images/buttons.png?1290485261') 0 -222px;
 }
 /* line 93, ../../../app/stylesheets/screen.sass */
 #musicbar #player #buttons a.skip#next_song:hover {
-  background: url('/images/buttons.png?1290417892') 0 -259px;
+  background: url('/images/buttons.png?1290485261') 0 -259px;
 }
 /* line 95, ../../../app/stylesheets/screen.sass */
 #musicbar #player #buttons a.skip#next_song:hover:active {
-  background: url('/images/buttons.png?1290417892') 0 -296px;
+  background: url('/images/buttons.png?1290485261') 0 -296px;
 }
 /* line 97, ../../../app/stylesheets/screen.sass */
 #musicbar #player #buttons a.skip#previous_song {
-  background: url('/images/buttons.png?1290417892') 0 -333px;
+  background: url('/images/buttons.png?1290485261') 0 -333px;
 }
 /* line 99, ../../../app/stylesheets/screen.sass */
 #musicbar #player #buttons a.skip#previous_song:hover {
-  background: url('/images/buttons.png?1290417892') 0 -370px;
+  background: url('/images/buttons.png?1290485261') 0 -370px;
 }
 /* line 101, ../../../app/stylesheets/screen.sass */
 #musicbar #player #buttons a.skip#previous_song:hover:active {
-  background: url('/images/buttons.png?1290417892') 0 -407px;
+  background: url('/images/buttons.png?1290485261') 0 -407px;
 }
 
 /* line 103, ../../../app/stylesheets/screen.sass */
 #song_container {
   font-family: "ff-meta-web-pro-1", "ff-meta-web-pro-2", sans-serif;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 18px;
   position: absolute;
   background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, color-stop(0%, #bebebe), color-stop(10%, #dcdcdc), color-stop(100%, #e6e6e6));
@@ -227,19 +227,16 @@ body {
   overflow: hidden;
   -webkit-user-select: none;
 }
-/* line 124, ../../../app/stylesheets/screen.sass */
-#song_container .field {
-  overflow: hidden;
-}
-/* line 126, ../../../app/stylesheets/screen.sass */
+/* line 125, ../../../app/stylesheets/screen.sass */
 #song_container .field.track {
   display: inline-block;
   width: 20px;
 }
-/* line 129, ../../../app/stylesheets/screen.sass */
+/* line 128, ../../../app/stylesheets/screen.sass */
 #song_container .field.song_title {
   display: inline-block;
-  width: 400px;
+  overflow: hidden;
+  width: 420px;
 }
 /* line 132, ../../../app/stylesheets/screen.sass */
 #song_container .field.artist {
@@ -248,7 +245,7 @@ body {
 /* line 134, ../../../app/stylesheets/screen.sass */
 #song_container .field.album {
   display: inline-block;
-  width: 250px;
+  width: 380px;
 }
 /* line 137, ../../../app/stylesheets/screen.sass */
 #song_container #songs_body {

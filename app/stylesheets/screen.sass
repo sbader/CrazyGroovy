@@ -102,7 +102,7 @@ body
                 background: sprite-image("buttons/previous_highlighted.png")
 #song_container
   font-family: "ff-meta-web-pro-1","ff-meta-web-pro-2",sans-serif
-  font-size: 14px
+  font-size: 12px
   line-height: 18px
   position: absolute
   +linear-gradient(color-stops($endgrey,$stopgrey 10%, $startgrey))
@@ -122,18 +122,18 @@ body
     overflow: hidden
     -webkit-user-select: none
   .field
-    overflow: hidden
     &.track
       display: inline-block
       width: 20px
     &.song_title
       display: inline-block
-      width: 400px
+      overflow: hidden
+      width: 420px
     &.artist
       display: inline-block
     &.album
       display: inline-block
-      width: 250px
+      width: 380px
   #songs_body
     position: absolute
     top: 26px
