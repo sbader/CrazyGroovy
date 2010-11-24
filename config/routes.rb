@@ -1,4 +1,6 @@
 Audio::Application.routes.draw do
+  devise_for :users
+
   resources :songs
   resources :albums
 

@@ -14,4 +14,6 @@
       try{Typekit.load();}catch(e){}
     = csrf_meta_tag
   %body
+    %p.notice= notice
+    %p.alert= alert
     = yield
