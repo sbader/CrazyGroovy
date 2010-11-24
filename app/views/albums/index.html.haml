@@ -24,7 +24,7 @@
   #songs_body
     - for album in @albums
       -for song in album.songs.sort!{|t1,t2|t1.track <=> t2.track}
-        .song{:id => dom_id(song),:data => {:s3_key => song.s3_key}, :class => cycle(:odd, :even)}
+        .song{:id => dom_id(song),:data => {:id => song.id}, :class => cycle(:odd, :even)}
           .track{:class => 'field'}= song.track
           .song_title{:class => 'field'}= song.title
           .album{:class => 'field'}= album.title

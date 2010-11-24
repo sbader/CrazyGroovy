@@ -82,7 +82,7 @@ $(document).ready(function(){
   });
   $(".song").dblclick(function(){
     current_song = $(this);
-    play_song($(this).data("s3_key"));
+    play_song($(this).data("id"));
     $("#play_button").addClass("paused")
     return false;
   });
@@ -104,7 +104,7 @@ $(document).ready(function(){
         audio.play();
       }
       else{
-        src = current_song.data("s3_key");
+        src = current_song.data("id");
         play_song(src);
       }
     }
@@ -112,21 +112,23 @@ $(document).ready(function(){
       audio.pause();
     }
   }
-  function play_song(src){
-    audio.volume = .5;
-    audio.setAttribute('src',src);
-    audio.load();
-    audio.play();
-    change_label();
-    timeleft.removeClass('white');
+  function play_song(song_id){
+    $.getJSON('/songs/'+song_id+'.js',function(json){
+      audio.setAttribute('src',json.song.s3_key);
+      audio.volume = .5;
+      audio.load();
+      audio.play();
+      change_label();
+      timeleft.removeClass('white');
+    });
   }
   function next_song(){
-    song = current_song.next().data("s3_key");
+    song = current_song.next().data("id");
     current_song = current_song.next();
     play_song(song);
   }
   function previous_song(){
-    song = current_song.prev().data("s3_key");
+    song = current_song.prev().data("id");
     if(song){
       current_song = current_song.prev();
       play_song(song);

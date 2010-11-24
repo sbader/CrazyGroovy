@@ -89,13 +89,13 @@ body {
 /* line 34, ../../../app/stylesheets/screen.sass */
 #musicbar #player {
   margin: 20px auto 20px auto;
-  width: 400px;
+  width: 800px;
   vertical-align: top;
 }
 /* line 38, ../../../app/stylesheets/screen.sass */
 #musicbar #player #info {
   font-family: "sorts-mill-goudy-1", "sorts-mill-goudy-2", serif;
-  width: 400px;
+  width: 800px;
   display: inline-block;
   font-size: 14px;
   height: 78px;
@@ -147,27 +147,27 @@ body {
   vertical-align: middle;
   width: 46px;
   height: 37px;
-  background: url('/images/buttons.png?1290485261');
+  background: url('/images/buttons.png?1290567231');
 }
 /* line 77, ../../../app/stylesheets/screen.sass */
 #musicbar #player #buttons a#play_button:hover {
-  background: url('/images/buttons.png?1290485261') 0 -37px;
+  background: url('/images/buttons.png?1290567231') 0 -37px;
 }
 /* line 79, ../../../app/stylesheets/screen.sass */
 #musicbar #player #buttons a#play_button:hover:active {
-  background: url('/images/buttons.png?1290485261') 0 -74px;
+  background: url('/images/buttons.png?1290567231') 0 -74px;
 }
 /* line 81, ../../../app/stylesheets/screen.sass */
 #musicbar #player #buttons a#play_button.paused {
-  background: url('/images/buttons.png?1290485261') 0 -111px;
+  background: url('/images/buttons.png?1290567231') 0 -111px;
 }
 /* line 83, ../../../app/stylesheets/screen.sass */
 #musicbar #player #buttons a#play_button.paused:hover {
-  background: url('/images/buttons.png?1290485261') 0 -148px;
+  background: url('/images/buttons.png?1290567231') 0 -148px;
 }
 /* line 85, ../../../app/stylesheets/screen.sass */
 #musicbar #player #buttons a#play_button.paused:hover:active {
-  background: url('/images/buttons.png?1290485261') 0 -185px;
+  background: url('/images/buttons.png?1290567231') 0 -185px;
 }
 /* line 87, ../../../app/stylesheets/screen.sass */
 #musicbar #player #buttons a.skip {
@@ -177,27 +177,27 @@ body {
 }
 /* line 91, ../../../app/stylesheets/screen.sass */
 #musicbar #player #buttons a.skip#next_song {
-  background: url('/images/buttons.png?1290485261') 0 -222px;
+  background: url('/images/buttons.png?1290567231') 0 -222px;
 }
 /* line 93, ../../../app/stylesheets/screen.sass */
 #musicbar #player #buttons a.skip#next_song:hover {
-  background: url('/images/buttons.png?1290485261') 0 -259px;
+  background: url('/images/buttons.png?1290567231') 0 -259px;
 }
 /* line 95, ../../../app/stylesheets/screen.sass */
 #musicbar #player #buttons a.skip#next_song:hover:active {
-  background: url('/images/buttons.png?1290485261') 0 -296px;
+  background: url('/images/buttons.png?1290567231') 0 -296px;
 }
 /* line 97, ../../../app/stylesheets/screen.sass */
 #musicbar #player #buttons a.skip#previous_song {
-  background: url('/images/buttons.png?1290485261') 0 -333px;
+  background: url('/images/buttons.png?1290567231') 0 -333px;
 }
 /* line 99, ../../../app/stylesheets/screen.sass */
 #musicbar #player #buttons a.skip#previous_song:hover {
-  background: url('/images/buttons.png?1290485261') 0 -370px;
+  background: url('/images/buttons.png?1290567231') 0 -370px;
 }
 /* line 101, ../../../app/stylesheets/screen.sass */
 #musicbar #player #buttons a.skip#previous_song:hover:active {
-  background: url('/images/buttons.png?1290485261') 0 -407px;
+  background: url('/images/buttons.png?1290567231') 0 -407px;
 }
 
 /* line 103, ../../../app/stylesheets/screen.sass */
@@ -230,24 +230,26 @@ body {
 /* line 125, ../../../app/stylesheets/screen.sass */
 #song_container .field.track {
   display: inline-block;
-  width: 20px;
+  width: 18px;
+  text-align: right;
+  padding-right: 2px;
 }
-/* line 128, ../../../app/stylesheets/screen.sass */
+/* line 130, ../../../app/stylesheets/screen.sass */
 #song_container .field.song_title {
   display: inline-block;
   overflow: hidden;
   width: 420px;
 }
-/* line 132, ../../../app/stylesheets/screen.sass */
+/* line 134, ../../../app/stylesheets/screen.sass */
 #song_container .field.artist {
   display: inline-block;
 }
-/* line 134, ../../../app/stylesheets/screen.sass */
+/* line 136, ../../../app/stylesheets/screen.sass */
 #song_container .field.album {
   display: inline-block;
   width: 380px;
 }
-/* line 137, ../../../app/stylesheets/screen.sass */
+/* line 139, ../../../app/stylesheets/screen.sass */
 #song_container #songs_body {
   position: absolute;
   top: 26px;
@@ -257,7 +259,7 @@ body {
   overflow-y: auto;
   overflow-x: hidden;
 }
-/* line 145, ../../../app/stylesheets/screen.sass */
+/* line 147, ../../../app/stylesheets/screen.sass */
 #song_container #songs_body .song {
   min-width: 940px;
   padding: 3px 6px 3px 6px;
@@ -265,11 +267,11 @@ body {
   -moz-user-select: none;
   cursor: default;
 }
-/* line 151, ../../../app/stylesheets/screen.sass */
+/* line 153, ../../../app/stylesheets/screen.sass */
 #song_container #songs_body .song.even {
   background-color: #f4f4f4;
 }
-/* line 153, ../../../app/stylesheets/screen.sass */
+/* line 155, ../../../app/stylesheets/screen.sass */
 #song_container #songs_body .song.even.selected {
   background-color: #007abc;
   opacity: 0.7;
@@ -277,11 +279,11 @@ body {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
   color: white;
 }
-/* line 157, ../../../app/stylesheets/screen.sass */
+/* line 159, ../../../app/stylesheets/screen.sass */
 #song_container #songs_body .song.odd {
   background-color: white;
 }
-/* line 159, ../../../app/stylesheets/screen.sass */
+/* line 161, ../../../app/stylesheets/screen.sass */
 #song_container #songs_body .song.odd.selected {
   background-color: #007abc;
   color: white;
