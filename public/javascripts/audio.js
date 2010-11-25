@@ -92,6 +92,7 @@ $(document).ready(function(){
       audio.play();
       if(audio.play){
         $("#play_button").addClass("paused"); //this needs to run when the song is actually playing
+        change_label();
       }
     });
   }
@@ -107,7 +108,7 @@ $(document).ready(function(){
       play_song(song);
     }
   }
-  function change_label(duration){
+  function change_label(){
     $("#song_title").html(current_song.children(".song_title").text());
     $("#artist").html(current_song.children(".artist").text());
     $("#album").html(current_song.children(".album").text());
