@@ -1,35 +1,20 @@
 $(document).ready(function(){
   // positionIndicator = $('.player #handle');
-  timeleft = $('#timeleft');
-  duration = $('#duration');
   var supportsAudio = !!document.createElement('audio').canPlayType,
        audio,
        loadingIndicator,
        positionIndicator,
-       timeleft,
+       timeleft = $('#timeleft'),
+       duration = $('#duration'),
        loaded = false,
        manualSeek = false;
+  
   if(supportsAudio){
-    var audio = $("#audio audio").get(0);
+    audio = $("#audio audio").get(0);
     var current_song = $("#songs_body").children(".song").first();
     change_label();
     var positionIndicator = $('#player #handle');
-    $('#player #gutter').slider({
-       value: audio.currentTime,
-       step: 0.01,
-       orientation: "horizontal",
-       range: "min",
-       max: audio.duration,
-       animate: true,          
-       slide: function(e,ui){              
-          // manualSeek = true;
-         audio.currentTime = ui.value;
-       },
-       stop:function(e,ui){
-          // manualSeek = false;          
-         audio.currentTime = ui.value;
-       }
-     });
+    update_slider(0);
     if ((audio.buffered != undefined) && (audio.buffered.length != 0)) {
      $(audio).bind('progress', function() {
        var loaded = parseInt(((audio.buffered.end(0) / audio.duration) * 100), 10);
@@ -39,33 +24,15 @@ $(document).ready(function(){
       var rem = parseInt(audio.duration - audio.currentTime, 10),
               pos = (audio.currentTime / audio.duration) * 100,
               mins = Math.floor(rem/60,10),
-              secs = rem - mins*60;
+              secs = rem - mins*60,
+              dur = parseInt(audio.duration,10),
+              dur_mins = Math.floor(dur/60,10),
+              dur_secs = dur - dur_mins * 60;
       timeleft.text('-' + mins + ':' + (secs < 10 ? '0' + secs : secs));
-      if(pos > 95){
-        timeleft.addClass('white');
-      }
-      // if (!manualSeek) { positionIndicator.css({left: pos + '%'}); }
-     $('#player #gutter').slider({
-         value: audio.currentTime,
-         step: 0.01,
-         orientation: "horizontal",
-         range: "min",
-         max: audio.duration,
-         animate: true,          
-         slide: function(e,ui){              
-            // manualSeek = true;
-           audio.currentTime = ui.value;
-         },
-         stop:function(e,ui){
-            // manualSeek = false;          
-           audio.currentTime = ui.value;
-         }
-       });
+      duration.text('-' + dur_mins + ':' + (dur_secs < 10 ? '0' + dur_secs : dur_secs))
+      update_slider(audio.currentTime);
     });
   }
-  // else {
-  //   loadingIndicator.remove();
-  // }
   $("#previous_song").click(function(){
     previous_song();
   });
@@ -83,15 +50,12 @@ $(document).ready(function(){
   $(".song").dblclick(function(){
     current_song = $(this);
     play_song($(this).data("id"));
-    $("#play_button").addClass("paused")
     return false;
   });
   $(audio).bind('play',function(){ 
-    $("#play_button").addClass("paused")
     $("#play_button").attr("href","#pause");
   });
   $(audio).bind('pause',function(){
-    $("#play_button").removeClass("paused")
     $("#play_button").attr("href","#play");
   });
   $(audio).bind('ended',function(){
@@ -102,6 +66,9 @@ $(document).ready(function(){
     if(audio.paused){
       if((audio.buffered != undefined) && (audio.buffered.length != 0)){
         audio.play();
+        if(audio.play){
+          $("#play_button").addClass("paused"); //this needs to run when the song is actually playing
+        }
       }
       else{
         src = current_song.data("id");
@@ -109,7 +76,12 @@ $(document).ready(function(){
       }
     }
     else{
-      audio.pause();
+      if((audio.buffered != undefined) && (audio.buffered.length != 0)){
+        audio.pause();
+        if(audio.paused){
+          $("#play_button").removeClass("paused");
+        }
+      }
     }
   }
   function play_song(song_id){
@@ -118,8 +90,9 @@ $(document).ready(function(){
       audio.volume = .5;
       audio.load();
       audio.play();
-      change_label();
-      timeleft.removeClass('white');
+      if(audio.play){
+        $("#play_button").addClass("paused"); //this needs to run when the song is actually playing
+      }
     });
   }
   function next_song(){
@@ -134,9 +107,25 @@ $(document).ready(function(){
       play_song(song);
     }
   }
-  function change_label(){
+  function change_label(duration){
     $("#song_title").html(current_song.children(".song_title").text());
     $("#artist").html(current_song.children(".artist").text());
     $("#album").html(current_song.children(".album").text());
+  }
+  function update_slider(value){
+    $('#player #gutter').slider({
+       value: value,
+       step: 0.01,
+       orientation: "horizontal",
+       range: "min",
+       max: audio.duration,
+       animate: true,          
+       slide: function(e,ui){              
+         audio.currentTime = ui.value;
+       },
+       stop:function(e,ui){
+         audio.currentTime = ui.value;
+       }
+     });
   }
 });

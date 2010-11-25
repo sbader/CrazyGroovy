@@ -22,6 +22,8 @@ body
   padding: 0
   //background: url("/images/back.png") repeat
 #musicbar
+  -webkit-user-select: none
+  -moz-user-select: none
   position: absolute
   top: 0px
   left: 0px
@@ -48,20 +50,24 @@ body
         line-height: 24px
         font-size: 22px
       #progress
+        -webkit-user-select: none
+        -moz-user-select: none
         margin-top: 8px
+        #duration
+          display: inline-block
+          font-size: 9px
+          line-height: 13px
+          vertical-align: top
         #gutter
           display: inline-block
           width: 400px
           height: 10px
-        #timeleft
-          position: absolute
-          right: 6px
-          font-size: 9px
-          line-height: 10px
           vertical-align: top
-          z-index: 1000000
-          &.white
-            color: #FFFFFF
+        #timeleft
+          display: inline-block
+          font-size: 9px
+          line-height: 13px
+          vertical-align: top
     #buttons
       width: 130px
       margin: 0 auto 0 auto
