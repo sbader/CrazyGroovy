@@ -1,3 +1,17 @@
+GIT
+  remote: git://github.com/sbader/fog.git
+  revision: 1862a340485179c270c177e5914b56c59d50f6b6
+  specs:
+    fog (0.3.25)
+      builder
+      excon (>= 0.2.4)
+      formatador (>= 0.0.16)
+      json
+      mime-types
+      net-ssh (~> 2.0.23)
+      nokogiri (~> 1.4.3.1)
+      ruby-hmac
+
 GEM
   remote: http://rubygems.org/
   specs:
@@ -41,15 +55,6 @@ GEM
     erubis (2.6.6)
       abstract (>= 1.0.0)
     excon (0.2.4)
-    fog (0.3.22)
-      builder
-      excon (>= 0.2.4)
-      formatador (>= 0.0.16)
-      json
-      mime-types
-      net-ssh (~> 2.0.23)
-      nokogiri (~> 1.4.3.1)
-      ruby-hmac
     formatador (0.0.16)
     haml (3.0.23)
     hpricot (0.8.3)
@@ -109,7 +114,7 @@ PLATFORMS
 DEPENDENCIES
   compass
   devise
-  fog
+  fog!
   haml
   hpricot
   jquery-rails

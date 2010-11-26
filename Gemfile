@@ -7,7 +7,7 @@ gem 'rails', '3.0.0'
 
 gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'ruby-mp3info'
-gem 'fog'
+gem 'fog', :git => 'git://github.com/sbader/fog.git'
 gem 'haml'
 gem 'compass'
 gem 'lemonade'
