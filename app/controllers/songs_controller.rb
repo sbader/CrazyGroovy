@@ -7,6 +7,7 @@ class SongsController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @songs }
+      format.json  { render :json => @songs }
     end
   end
 
@@ -19,6 +20,7 @@ class SongsController < ApplicationController
       format.html # show.html.erb
       format.xml  { render :xml => @song }
       format.js {render :json => @song }
+      format.json  { render :json => @song }
     end
   end
 

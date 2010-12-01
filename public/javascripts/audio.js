@@ -1,11 +1,10 @@
 $(document).ready(function(){
-  // positionIndicator = $('.player #handle');
   var supportsAudio = !!document.createElement('audio').canPlayType,
        audio,
        loadingIndicator,
        positionIndicator,
-       timeleft = $('#timeleft'),
-       duration = $('#duration'),
+       // timeleft = $('#timeleft'),
+       // duration = $('#duration'),
        loaded = false,
        manualSeek = false;
   
@@ -15,24 +14,35 @@ $(document).ready(function(){
     change_label();
     var positionIndicator = $('#player #handle');
     update_slider(0);
-    if ((audio.buffered != undefined) && (audio.buffered.length != 0)) {
-     $(audio).bind('progress', function() {
-       var loaded = parseInt(((audio.buffered.end(0) / audio.duration) * 100), 10);
-     });
-   }
-   $(audio).bind('timeupdate',function(){
-      var rem = parseInt(audio.duration - audio.currentTime, 10),
-              pos = (audio.currentTime / audio.duration) * 100,
-              mins = Math.floor(rem/60,10),
-              secs = rem - mins*60,
-              dur = parseInt(audio.duration,10),
-              dur_mins = Math.floor(dur/60,10),
-              dur_secs = dur - dur_mins * 60;
-      timeleft.text('-' + mins + ':' + (secs < 10 ? '0' + secs : secs));
-      duration.text('-' + dur_mins + ':' + (dur_secs < 10 ? '0' + dur_secs : dur_secs))
-      update_slider(audio.currentTime);
-    });
   }
+  $(audio).bind('play',function(){ 
+   $("#play_button").attr("href","#pause");
+  });
+  
+  $(audio).bind('pause',function(){
+   $("#play_button").attr("href","#play");
+  });
+  
+  $(audio).bind('ended',function(){
+   next_song();
+   // timeleft.removeClass('white');
+  });
+  
+  $(audio).bind('timeupdate',function(){
+    var rem = parseInt(audio.duration - audio.currentTime, 10),
+            pos = (audio.currentTime / audio.duration) * 100,
+            mins = Math.floor(rem/60,10),
+            secs = rem - mins*60,
+            dur = parseInt(audio.duration,10),
+            dur_mins = Math.floor(dur/60,10),
+            dur_secs = dur - dur_mins * 60;
+    // timeleft.text('-' + mins + ':' + (secs < 10 ? '0' + secs : secs));
+    // duration.text('-' + dur_mins + ':' + (dur_secs < 10 ? '0' + dur_secs : dur_secs));
+    update_slider(audio.currentTime);
+  });
+  
+  $("#songs_body").selectable({filter: 'div.song'});
+  
   $("#previous_song").click(function(){
     previous_song();
   });
@@ -42,26 +52,13 @@ $(document).ready(function(){
   $("#play_button").click(function(){
     play_pause_toggle();
   });
-  $(".song").click(function(){
-    $(".song").removeClass("selected");
-    $(this).addClass("selected");
-    return false;
-  });
+
   $(".song").dblclick(function(){
     current_song = $(this);
     play_song($(this).data("id"));
     return false;
   });
-  $(audio).bind('play',function(){ 
-    $("#play_button").attr("href","#pause");
-  });
-  $(audio).bind('pause',function(){
-    $("#play_button").attr("href","#play");
-  });
-  $(audio).bind('ended',function(){
-    next_song();
-    timeleft.removeClass('white');
-  });
+  
   function play_pause_toggle(){
     if(audio.paused){
       if((audio.buffered != undefined) && (audio.buffered.length != 0)){
@@ -86,7 +83,7 @@ $(document).ready(function(){
   }
   function play_song(song_id){
     $.getJSON('/songs/'+song_id+'.js',function(json){
-      audio.setAttribute('src',json.song.s3_key);
+      audio.setAttribute('src',json.url);
       audio.volume = .5;
       audio.load();
       audio.play();
