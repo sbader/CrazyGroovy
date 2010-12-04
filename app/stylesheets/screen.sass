@@ -7,6 +7,7 @@ $bodygrey: rgb(240, 240, 240)
 $startgrey: rgb(230, 230, 230)
 $endgrey: rgb(190, 190, 190)
 $stopgrey: rgb(220, 220, 220)
+$pressgrey: #ddd
 $evenlightergrey: #eee
 $lightestgrey: #eee
 $albumheadgrey: #eeeeff
@@ -20,6 +21,7 @@ body
   background: $coolblue
   color: #fff
 #musicbar
+  color: rgb(100,100,100)
   -webkit-user-select: none
   -moz-user-select: none
   position: absolute
@@ -38,14 +40,14 @@ body
       font-family: "museo-slab-1","museo-slab-2",serif
       width: 800px
       display: inline-block
-      font-size: 12px
+      font-size: 14px
       height: 78px
       vertical-align: top
       text-align: center
       line-height: 16px
-      font-weight: 100
+      font-weight: 300
+      text-shadow: rgba(255,255,255,0.8) 0 1px 0, darken(rgb(100,100,100), 20%) 0px -1px 0
       #song_title
-        font-weight: 300
         line-height: 26px
         font-size: 22px
       #progress
@@ -124,6 +126,8 @@ body
   left: 0px
   right: 0px
   bottom: 0px
+  color: #333
+  
   #songs_head
     background-color: #F4F4F4
     padding: 0px 6px 6px 6px
@@ -135,6 +139,7 @@ body
     bottom: 0px
     overflow: hidden
     -webkit-user-select: none
+    +border-top-radius(3px)
     .field
       height: 16px
   .field
