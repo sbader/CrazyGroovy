@@ -1,22 +1,12 @@
--#encoding: UTF-8
+-content_for :javascript do
+  = javascript_include_tag "stopper"
 #musicbar
-  %audio#audio{:preload => 'auto',:class => 'audio'}
-/ #musicbar
-/   #player
-/     #info
-/       #song_title
-/       #artist
-/       #album
-/       .scrubber
-/         #progress{:class => 'progress'}
-/         .loaded
-/       #time{:class => 'time'}
-/         #duration{:class => 'played'}
-/         #timeleft{:class => 'duration'}
-/     #buttons
-/       %a#previous_song.skip{:href => '#prev'}
-/       %a#play_button{:class => 'play-pause'}
-/       %a#next_song.skip{:href => '#next'}
+  #player
+    #info
+      #song_title
+      #artist
+      #album
+    %audio#audio{:preload => 'auto',:class => 'audio'}
 #song_container
   #songs_head
     .track{:class => 'field'}
