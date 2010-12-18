@@ -68,17 +68,61 @@ $(function(){
   $(document).keydown(function(e) {    
     var unicode = e.charCode ? e.charCode : e.keyCode;
        // right arrow
-    if (unicode == 39) {
-      e.preventDefault();
-      play_next();
-      // back arrow
-    } else if (unicode == 37) {
-      e.preventDefault();
-      play_previous();
-      // spacebar
-    } else if (unicode == 32) {
-      e.preventDefault();
-      audio.playPause();
+    if(!e.metaKey && !e.shiftKey && !e.altKey && !e.ctrlKey)
+    {
+      switch(unicode)
+      {
+        case 39:
+          e.preventDefault();
+          play_next();
+          break;
+        case 37:
+          e.preventDefault();
+          play_previous();
+          break;
+        case 32:
+          e.preventDefault();
+          audio.playPause();
+          break;
+        case 74:
+          e.preventDefault();
+          var next = $('#songs_body .ui-selected').next();
+          if (next.length){
+            next.addClass('ui-selected').siblings().removeClass('ui-selected');
+            console.log('SongBodyScrollTop: ' +  $('#songs_body').scrollTop() + 
+                        ' SongBodyHeight: ' + $('#songs_body').height() +
+                        ' RowTop: ' + next.position().top
+                        );
+            if(next.position().top >= $('#songs_body').height()){
+              $('#songs_body').scrollTop($('#songs_body').scrollTop() + (next.position().top - $('#songs_body').height() + next.outerHeight()));
+            }
+          }
+          else{
+            $("#songs_body").children('.song').first().addClass('ui-selected');
+          }
+          //Keep 
+          break;
+        case 75:
+          e.preventDefault();
+          var prev = $('#songs_body .ui-selected').prev();
+          if (prev.length){ 
+            prev.addClass('ui-selected').siblings().removeClass('ui-selected');
+            if(prev.position().top < 0){
+               $('#songs_body').scrollTop($('#songs_body').scrollTop() + prev.position().top);
+            }
+          }
+          else{
+            $("#songs_body").children('.song').first().addClass('ui-selected');
+          }
+          break;
+        case 13:
+          e.preventDefault();
+          if($('#songs_body .ui-selected') != $('#songs_body .playing')){
+            var song = $('#songs_body .ui-selected');
+            console.log(song);
+            song.dblclick();
+          }
+      }
     }
   });
   
