@@ -70,7 +70,6 @@ $(function(){
        // right arrow
     if(!e.metaKey && !e.shiftKey && !e.altKey && !e.ctrlKey)
     {
-      console.log(unicode);
       switch(unicode)
       {
         case 190://right

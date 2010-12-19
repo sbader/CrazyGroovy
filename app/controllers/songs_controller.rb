@@ -1,6 +1,8 @@
 class SongsController < ApplicationController
   # GET /songs
   # GET /songs.xml
+  before_filter :authenticate_user!
+  protect_from_forgery :except => [:create]
   def index
     @songs = Song.all
 
@@ -49,9 +51,11 @@ class SongsController < ApplicationController
       if @song.save
         format.html { redirect_to(@song, :notice => 'Song was successfully created.') }
         format.xml  { render :xml => @song, :status => :created, :location => @song }
+        format.json  { render :json => @song, :status => :created, :location => @song }
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @song.errors, :status => :unprocessable_entity }
+        format.json  { render :json => @song, :status => :unprocessable_entity }
       end
     end
   end

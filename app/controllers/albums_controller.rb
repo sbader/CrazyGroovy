@@ -2,6 +2,7 @@ class AlbumsController < ApplicationController
   # GET /albums
   # GET /albums.xml
   before_filter :authenticate_user!
+  protect_from_forgery :except => [:create]
   def index
     @albums = Album.all
 
@@ -41,15 +42,17 @@ class AlbumsController < ApplicationController
   # POST /albums
   # POST /albums.xml
   def create
-    @album = Album.new(params[:album])
-
+    @album = Album.find_or_create_by_artist_and_title(params[:album][:artist],params[:album][:title])
+    
     respond_to do |format|
       if @album.save
         format.html { redirect_to(@album, :notice => 'Album was successfully created.') }
         format.xml  { render :xml => @album, :status => :created, :location => @album }
+        format.json  { render :json => @album, :status => :created, :location => @album }
       else
         format.html { render :action => "new" }
         format.xml  { render :xml => @album.errors, :status => :unprocessable_entity }
+        format.json  { render :json => @album, :status => :unprocessable_entity }
       end
     end
   end
