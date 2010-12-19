@@ -96,7 +96,7 @@ GEM
       thor (~> 0.14.0)
     rake (0.8.7)
     ruby-hmac (0.4.0)
-    ruby-taglib2 (1.02)
+    ruby-mp3info (0.6.13)
     ruby_parser (2.0.5)
       sexp_processor (~> 3.0)
     sexp_processor (3.0.5)
@@ -120,6 +120,6 @@ DEPENDENCIES
   jquery-rails
   lemonade
   rails (= 3.0.0)
-  ruby-taglib2
+  ruby-mp3info
   ruby_parser
   sqlite3-ruby
