@@ -45,8 +45,8 @@ class SongsController < ApplicationController
   # POST /songs
   # POST /songs.xml
   def create
-    @song = Song.new(params[:song])
-
+    @song = Song.find_or_create_by_title_and_track_and_s3_key(params[:song][:title],params[:song][:track],params[:song][:s3_key])
+    
     respond_to do |format|
       if @song.save
         format.html { redirect_to(@song, :notice => 'Song was successfully created.') }
