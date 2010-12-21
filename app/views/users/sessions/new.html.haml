@@ -1,8 +1,8 @@
 #signin
-  %p.notice= notice
-  %p.alert= alert
   #top
     #form
+      %p.notice= notice
+      %p.alert= alert
       = form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
         %p
           = f.label :email

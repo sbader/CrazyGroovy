@@ -191,43 +191,50 @@ a:hover {
 #signin #form {
   width: 408px;
   margin: 40px auto 0 auto;
+  text-shadow: rgba(255, 255, 255, 0.8) 0 1px 0, #313131 0px -1px 0;
   font-family: "museo-slab-1", "museo-slab-2", serif;
 }
-/* line 44, ../../../app/stylesheets/screen.sass */
+/* line 45, ../../../app/stylesheets/screen.sass */
+#signin #form p.notice, #signin #form p.alert {
+  color: red;
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+/* line 49, ../../../app/stylesheets/screen.sass */
 #signin #form label {
   font-size: 20px;
   text-shadow: rgba(255, 255, 255, 0.8) 0 1px 0, #313131 0px -1px 0;
 }
-/* line 47, ../../../app/stylesheets/screen.sass */
+/* line 52, ../../../app/stylesheets/screen.sass */
 #signin #form input[type=text], #signin #form input[type=password] {
   font-size: 22px;
   width: 400px;
   padding: 3px;
   margin-bottom: 14px;
 }
-/* line 52, ../../../app/stylesheets/screen.sass */
+/* line 57, ../../../app/stylesheets/screen.sass */
 #signin #form #remember {
   display: none;
   margin-bottom: 14px;
 }
-/* line 55, ../../../app/stylesheets/screen.sass */
+/* line 60, ../../../app/stylesheets/screen.sass */
 #signin #form input[type=submit] {
   width: 408px;
   font-size: 32px;
   margin-bottom: 14px;
 }
-/* line 59, ../../../app/stylesheets/screen.sass */
+/* line 64, ../../../app/stylesheets/screen.sass */
 #signin #form #shared {
   text-align: center;
 }
-/* line 61, ../../../app/stylesheets/screen.sass */
+/* line 66, ../../../app/stylesheets/screen.sass */
 #signin #form #shared a {
   color: #2966a8;
   text-align: right;
   font-size: 13px;
 }
 
-/* line 65, ../../../app/stylesheets/screen.sass */
+/* line 70, ../../../app/stylesheets/screen.sass */
 #musicbar {
   color: #646464;
   position: absolute;
@@ -240,13 +247,13 @@ a:hover {
   background-image: -moz-linear-gradient(top, #e6e6e6 0%, #dcdcdc 10%, #bebebe 100%);
   background-image: linear-gradient(top, #e6e6e6 0%, #dcdcdc 10%, #bebebe 100%);
 }
-/* line 74, ../../../app/stylesheets/screen.sass */
+/* line 79, ../../../app/stylesheets/screen.sass */
 #musicbar #player {
   margin: 20px auto 20px auto;
   width: 800px;
   vertical-align: top;
 }
-/* line 78, ../../../app/stylesheets/screen.sass */
+/* line 83, ../../../app/stylesheets/screen.sass */
 #musicbar #player #info {
   font-family: "museo-slab-1", "museo-slab-2", serif;
   width: 800px;
@@ -258,18 +265,18 @@ a:hover {
   font-weight: 300;
   text-shadow: rgba(255, 255, 255, 0.8) 0 1px 0, #313131 0px -1px 0;
 }
-/* line 88, ../../../app/stylesheets/screen.sass */
+/* line 93, ../../../app/stylesheets/screen.sass */
 #musicbar #player #info #song_title {
   line-height: 26px;
   font-size: 22px;
 }
-/* line 91, ../../../app/stylesheets/screen.sass */
+/* line 96, ../../../app/stylesheets/screen.sass */
 #musicbar #player .audiojs {
   width: 400px;
   margin-left: auto;
   margin-right: auto;
 }
-/* line 95, ../../../app/stylesheets/screen.sass */
+/* line 100, ../../../app/stylesheets/screen.sass */
 #musicbar #player .audiojs .scrubber {
   margin-top: 16px;
   position: relative;
@@ -279,7 +286,7 @@ a:hover {
   margin-right: auto;
   background: url("../images/slider_h_bg.gif") 0px 0px repeat-x;
 }
-/* line 103, ../../../app/stylesheets/screen.sass */
+/* line 108, ../../../app/stylesheets/screen.sass */
 #musicbar #player .audiojs .scrubber .progress {
   left: 0;
   top: 0;
@@ -289,107 +296,107 @@ a:hover {
   display: inline-block;
   background: url("../images/slider_h_bg.gif") 0px -5px repeat-x;
 }
-/* line 111, ../../../app/stylesheets/screen.sass */
+/* line 116, ../../../app/stylesheets/screen.sass */
 #musicbar #player .audiojs .scrubber .loaded {
   display: inline-block;
   display: none;
   background: url("../images/slider_h_bg.gif") 0px 0px repeat-x;
 }
-/* line 115, ../../../app/stylesheets/screen.sass */
+/* line 120, ../../../app/stylesheets/screen.sass */
 #musicbar #player .audiojs .time {
   display: none;
 }
-/* line 117, ../../../app/stylesheets/screen.sass */
+/* line 122, ../../../app/stylesheets/screen.sass */
 #musicbar #player .buttons {
   width: 130px;
   margin: 8px auto 0 auto;
 }
-/* line 120, ../../../app/stylesheets/screen.sass */
+/* line 125, ../../../app/stylesheets/screen.sass */
 #musicbar #player .buttons div {
   cursor: pointer;
 }
-/* line 122, ../../../app/stylesheets/screen.sass */
+/* line 127, ../../../app/stylesheets/screen.sass */
 #musicbar #player .buttons .play-pause {
   display: inline-block;
 }
-/* line 124, ../../../app/stylesheets/screen.sass */
+/* line 129, ../../../app/stylesheets/screen.sass */
 #musicbar #player .buttons .play-pause div {
   width: 46px;
   height: 37px;
   vertical-align: middle;
 }
-/* line 128, ../../../app/stylesheets/screen.sass */
+/* line 133, ../../../app/stylesheets/screen.sass */
 #musicbar #player .buttons .play-pause div.loading, #musicbar #player .buttons .play-pause div.error {
   display: none;
 }
-/* line 130, ../../../app/stylesheets/screen.sass */
+/* line 135, ../../../app/stylesheets/screen.sass */
 #musicbar #player .buttons .next_song {
   display: inline-block;
   width: 38px;
   height: 37px;
   vertical-align: middle;
-  background: url('/images/buttons.png?1292905078');
+  background: url('/images/buttons.png?1292907881');
 }
-/* line 136, ../../../app/stylesheets/screen.sass */
+/* line 141, ../../../app/stylesheets/screen.sass */
 #musicbar #player .buttons .next_song:hover {
-  background: url('/images/buttons.png?1292905078') 0 -37px;
+  background: url('/images/buttons.png?1292907881') 0 -37px;
 }
-/* line 138, ../../../app/stylesheets/screen.sass */
+/* line 143, ../../../app/stylesheets/screen.sass */
 #musicbar #player .buttons .next_song:hover:active {
-  background: url('/images/buttons.png?1292905078') 0 -74px;
+  background: url('/images/buttons.png?1292907881') 0 -74px;
 }
-/* line 140, ../../../app/stylesheets/screen.sass */
+/* line 145, ../../../app/stylesheets/screen.sass */
 #musicbar #player .buttons .previous_song {
   display: inline-block;
   width: 38px;
   height: 37px;
   vertical-align: middle;
-  background: url('/images/buttons.png?1292905078') 0 -111px;
+  background: url('/images/buttons.png?1292907881') 0 -111px;
 }
-/* line 146, ../../../app/stylesheets/screen.sass */
+/* line 151, ../../../app/stylesheets/screen.sass */
 #musicbar #player .buttons .previous_song:hover {
-  background: url('/images/buttons.png?1292905078') 0 -148px;
-}
-/* line 148, ../../../app/stylesheets/screen.sass */
-#musicbar #player .buttons .previous_song:hover:active {
-  background: url('/images/buttons.png?1292905078') 0 -185px;
-}
-/* line 150, ../../../app/stylesheets/screen.sass */
-#musicbar #player .play {
-  display: inline-block;
-  background: url('/images/buttons.png?1292905078') 0 -222px;
+  background: url('/images/buttons.png?1292907881') 0 -148px;
 }
 /* line 153, ../../../app/stylesheets/screen.sass */
-#musicbar #player .play:hover {
-  background: url('/images/buttons.png?1292905078') 0 -259px;
+#musicbar #player .buttons .previous_song:hover:active {
+  background: url('/images/buttons.png?1292907881') 0 -185px;
 }
 /* line 155, ../../../app/stylesheets/screen.sass */
-#musicbar #player .play:hover:active {
-  background: url('/images/buttons.png?1292905078') 0 -296px;
+#musicbar #player .play {
+  display: inline-block;
+  background: url('/images/buttons.png?1292907881') 0 -222px;
 }
-/* line 157, ../../../app/stylesheets/screen.sass */
-#musicbar #player .pause {
-  display: none;
-  background: url('/images/buttons.png?1292905078') 0 -333px;
+/* line 158, ../../../app/stylesheets/screen.sass */
+#musicbar #player .play:hover {
+  background: url('/images/buttons.png?1292907881') 0 -259px;
 }
 /* line 160, ../../../app/stylesheets/screen.sass */
-#musicbar #player .pause:hover {
-  background: url('/images/buttons.png?1292905078') 0 -370px;
+#musicbar #player .play:hover:active {
+  background: url('/images/buttons.png?1292907881') 0 -296px;
 }
 /* line 162, ../../../app/stylesheets/screen.sass */
-#musicbar #player .pause:hover:active {
-  background: url('/images/buttons.png?1292905078') 0 -407px;
+#musicbar #player .pause {
+  display: none;
+  background: url('/images/buttons.png?1292907881') 0 -333px;
 }
 /* line 165, ../../../app/stylesheets/screen.sass */
+#musicbar #player .pause:hover {
+  background: url('/images/buttons.png?1292907881') 0 -370px;
+}
+/* line 167, ../../../app/stylesheets/screen.sass */
+#musicbar #player .pause:hover:active {
+  background: url('/images/buttons.png?1292907881') 0 -407px;
+}
+/* line 170, ../../../app/stylesheets/screen.sass */
 #musicbar #player .playing .play, #musicbar #player .playing .loading, #musicbar #player .playing .error {
   display: none;
 }
-/* line 167, ../../../app/stylesheets/screen.sass */
+/* line 172, ../../../app/stylesheets/screen.sass */
 #musicbar #player .playing .pause {
   display: inline-block;
 }
 
-/* line 169, ../../../app/stylesheets/screen.sass */
+/* line 174, ../../../app/stylesheets/screen.sass */
 #song_container {
   font-family: "gesta-1", "gesta-2", sans-serif;
   font-weight: 500;
@@ -402,7 +409,7 @@ a:hover {
   bottom: 0px;
   color: #333333;
 }
-/* line 181, ../../../app/stylesheets/screen.sass */
+/* line 186, ../../../app/stylesheets/screen.sass */
 #song_container #songs_head {
   background-color: #f4f4f4;
   padding: 0px 6px 6px 6px;
@@ -426,38 +433,38 @@ a:hover {
   -khtml-border-top-right-radius: 3px;
   border-top-right-radius: 3px;
 }
-/* line 192, ../../../app/stylesheets/screen.sass */
+/* line 197, ../../../app/stylesheets/screen.sass */
 #song_container #songs_head .field {
   height: 16px;
 }
-/* line 194, ../../../app/stylesheets/screen.sass */
+/* line 199, ../../../app/stylesheets/screen.sass */
 #song_container .field {
   height: 18px;
   line-height: 18px;
 }
-/* line 197, ../../../app/stylesheets/screen.sass */
+/* line 202, ../../../app/stylesheets/screen.sass */
 #song_container .field.track {
   display: inline-block;
   width: 18px;
   text-align: right;
   padding-right: 2px;
 }
-/* line 202, ../../../app/stylesheets/screen.sass */
+/* line 207, ../../../app/stylesheets/screen.sass */
 #song_container .field.song_title {
   display: inline-block;
   overflow: hidden;
   width: 420px;
 }
-/* line 206, ../../../app/stylesheets/screen.sass */
+/* line 211, ../../../app/stylesheets/screen.sass */
 #song_container .field.artist {
   display: inline-block;
 }
-/* line 208, ../../../app/stylesheets/screen.sass */
+/* line 213, ../../../app/stylesheets/screen.sass */
 #song_container .field.album {
   display: inline-block;
   width: 380px;
 }
-/* line 211, ../../../app/stylesheets/screen.sass */
+/* line 216, ../../../app/stylesheets/screen.sass */
 #song_container #songs_body {
   position: absolute;
   top: 26px;
@@ -467,41 +474,41 @@ a:hover {
   overflow-y: auto;
   overflow-x: hidden;
 }
-/* line 219, ../../../app/stylesheets/screen.sass */
+/* line 224, ../../../app/stylesheets/screen.sass */
 #song_container #songs_body .song {
   min-width: 940px;
   padding: 3px 6px 3px 6px;
   cursor: default;
 }
-/* line 224, ../../../app/stylesheets/screen.sass */
+/* line 229, ../../../app/stylesheets/screen.sass */
 #song_container #songs_body .song.playing .song_title::after {
   content: "♬";
   margin-left: 10px;
 }
-/* line 227, ../../../app/stylesheets/screen.sass */
+/* line 232, ../../../app/stylesheets/screen.sass */
 #song_container #songs_body .song.even {
   background-color: #f4f4f4;
 }
-/* line 229, ../../../app/stylesheets/screen.sass */
+/* line 234, ../../../app/stylesheets/screen.sass */
 #song_container #songs_body .song.even.ui-selecting {
   background: #a3cae0;
   color: white;
 }
-/* line 232, ../../../app/stylesheets/screen.sass */
+/* line 237, ../../../app/stylesheets/screen.sass */
 #song_container #songs_body .song.even.ui-selected {
   background: #a3cae0;
   color: white;
 }
-/* line 235, ../../../app/stylesheets/screen.sass */
+/* line 240, ../../../app/stylesheets/screen.sass */
 #song_container #songs_body .song.odd {
   background-color: white;
 }
-/* line 237, ../../../app/stylesheets/screen.sass */
+/* line 242, ../../../app/stylesheets/screen.sass */
 #song_container #songs_body .song.odd.ui-selecting {
   background: #a3cae0;
   color: white;
 }
-/* line 240, ../../../app/stylesheets/screen.sass */
+/* line 245, ../../../app/stylesheets/screen.sass */
 #song_container #songs_body .song.odd.ui-selected {
   background: #a3cae0;
   color: white;
