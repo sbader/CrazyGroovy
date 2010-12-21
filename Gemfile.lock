@@ -55,6 +55,8 @@ GEM
     erubis (2.6.6)
       abstract (>= 1.0.0)
     excon (0.2.4)
+    fancy-buttons (1.0.4)
+      compass (>= 0.10.6)
     formatador (0.0.16)
     haml (3.0.23)
     hpricot (0.8.3)
@@ -114,6 +116,7 @@ PLATFORMS
 DEPENDENCIES
   compass
   devise
+  fancy-buttons
   fog!
   haml
   hpricot

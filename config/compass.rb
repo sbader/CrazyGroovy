@@ -1,4 +1,5 @@
 require "lemonade"
+require 'fancy-buttons'
 project_type = :rails
 project_path = Compass::AppIntegration::Rails.root
 # Set this to the root of your project when deployed:
